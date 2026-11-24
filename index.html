@@ -1,0 +1,464 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para mi Amorshito 💗</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: #fff0f5;
+    color: #a34f72;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+button {
+    border: none;
+    background: #e989ad;
+    color: white;
+    padding: 13px 24px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s;
+    margin: 10px;
+}
+
+button:hover {
+    background: #d45c91;
+    transform: scale(1.07);
+}
+
+/* PANTALLA INICIAL */
+
+#inicio {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: linear-gradient(135deg, #ffd6e7, #fff0f5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+#inicio h1 {
+    font-size: 35px;
+    color: #d45e91;
+    margin-bottom: 20px;
+}
+
+#inicio p {
+    margin: 10px;
+    font-size: 18px;
+}
+
+#inicio.oculto {
+    display: none;
+}
+
+/* ENCABEZADO */
+
+header {
+    padding: 65px 20px;
+    background: linear-gradient(135deg, #ffd6e7, #fff0f5);
+}
+
+header h1 {
+    color: #d45e91;
+    font-size: 38px;
+    margin: 15px;
+}
+
+header p {
+    font-size: 17px;
+    margin: 10px;
+}
+
+/* SECCIONES */
+
+section {
+    padding: 40px 20px;
+    max-width: 850px;
+    margin: auto;
+}
+
+h2 {
+    color: #d45e91;
+    margin-bottom: 20px;
+    font-size: 27px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 22px;
+    margin: 20px auto;
+    max-width: 350px;
+    box-shadow: 0 5px 20px #e9a3c133;
+}
+
+.card h3 {
+    margin: 12px;
+}
+
+.carta-texto {
+    display: none;
+    margin-top: 18px;
+    line-height: 1.7;
+    animation: aparecer .6s;
+}
+
+.carta-texto.mostrar {
+    display: block;
+}
+
+/* GALERÍA */
+
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.foto {
+    width: 165px;
+    background: white;
+    padding: 10px 10px 18px;
+    box-shadow: 0 5px 15px #d58ba633;
+    transform: rotate(-3deg);
+    transition: .3s;
+}
+
+.foto:nth-child(even) {
+    transform: rotate(3deg);
+}
+
+.foto:hover {
+    transform: rotate(0) scale(1.07);
+}
+
+.foto img {
+    width: 100%;
+    height: 155px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.foto p {
+    margin-top: 12px;
+}
+
+/* MENSAJES */
+
+#mensaje {
+    margin: 25px auto;
+    font-size: 20px;
+    color: #d45e91;
+    min-height: 60px;
+    max-width: 400px;
+    line-height: 1.5;
+}
+
+/* CORAZONES */
+
+.corazon {
+    position: fixed;
+    bottom: -30px;
+    animation: flotar 5s linear forwards;
+    pointer-events: none;
+    z-index: 200;
+}
+
+@keyframes flotar {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* PIE */
+
+footer {
+    background: #ffdeeb;
+    padding: 40px 20px;
+    margin-top: 30px;
+}
+
+footer h2 {
+    font-size: 25px;
+}
+
+@media(max-width: 450px) {
+    header h1 {
+        font-size: 30px;
+    }
+
+    .foto {
+        width: 140px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PANTALLA DE BIENVENIDA -->
+
+<div id="inicio">
+    <div style="font-size:60px;">💗</div>
+
+    <h1>Holi Amorshito</h1>
+
+    <p>Tengo una pequeña sorpresita para ti...</p>
+    <p>Preparé esto con mucho amor. 🌷</p>
+
+    <button onclick="abrirPagina()">
+        Abrir mi regalito 💌
+    </button>
+</div>
+
+<!-- ENCABEZADO -->
+
+<header>
+    <div style="font-size:40px;">🌷💕🌷</div>
+
+    <h1>Para mi Amorshito</h1>
+
+    <p>Una pequeña pagina donde guarde un poquito de mi amor por ti.</p>
+
+    <p>Espero que te guste esta sorpresita. 🥺</p>
+</header>
+
+<!-- CARTAS -->
+
+<section>
+
+    <h2>💌 Cartitas secretas</h2>
+
+    <p>Hay algunas cositas que quiero decirte...</p>
+
+    <div class="card">
+        <div style="font-size:40px;">💌</div>
+
+        <h3>Cuando me extrañes</h3>
+
+        <button onclick="abrirCarta('carta1')">
+            Abrir cartita
+        </button>
+
+        <p id="carta1" class="carta-texto">
+            Aunque no este a tu lado, quiero que sepas
+            que siempre estoy pensandote , y deseando por volvera verte.
+            Te mando muchísimos besitos.
+            💗
+        </p>
+    </div>
+
+    <div class="card">
+        <div style="font-size:40px;">🌸</div>
+
+        <h3>Cuando estés triste</h3>
+
+        <button onclick="abrirCarta('carta2')">
+            Abrir cartita
+        </button>
+
+        <p id="carta2" class="carta-texto">
+           Recuerda que tu eres muyy importante para Mi
+           y eres muy valiosa , no te guardes lo que sientes ni pienses que tienes que poder con todo solita
+        quisiera estar contigo para abrazarte fuerte, llenarte de besitos y hacerte olvidar aunque sea un ratito todo lo que te pone triste. Recuerda que te quiero muchísimo y que aquí estoy para ti mi amor.
+            
+        </p>
+    </div>
+
+    <div class="card">
+        <div style="font-size:40px;">❤️</div>
+
+        <h3>Una última cartita</h3>
+
+        <button onclick="abrirCarta('carta3')">
+            Abrir cartita
+        </button>
+
+        <p id="carta3" class="carta-texto">
+            Si pudiera elegir nuevamente,
+            volvería a elegirte a ti.
+            Una y mil veces.
+            Te amo muchisimo amorshito.
+            ❤️
+        </p>
+    </div>
+
+</section>
+
+<!-- GALERÍA -->
+
+<section>
+
+    <h2>📸 Nuestros recuerditos</h2>
+
+    <p>Algunos momentos que quiero guardar siempre.</p>
+
+    <br>
+
+    <div class="galeria">
+
+        <div class="foto">
+            <img src="Foto1.jpeg" alt="Nuestro recuerdo">
+            <p>Mi recuerdo favorito ♡</p>
+        </div>
+
+        <div class="foto">
+            <img src="foto2.jpeg" alt="Nuestro recuerdo">
+            <p>Mi personita favorita</p>
+        </div>
+
+        <div class="foto">
+            <img src="foto3.jpeg" alt="Nuestro recuerdo">
+            <p>Un besito lleno de amor jeje</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- BOTONES DE MENSAJES -->
+
+<section>
+
+    <h2>💗 Un botoncito de amor</h2>
+
+    <p>Presiona el botón y descubre un mensajito.</p>
+
+    <button onclick="mostrarMensaje()">
+        Presióname, Amorshito 💕
+    </button>
+
+    <div id="mensaje"></div>
+
+</section>
+
+<!-- FINAL -->
+
+<footer>
+
+    <div style="font-size:40px;">💗🌷💗</div>
+
+    <h2>Hecho con mucho amor</h2>
+
+    <p>Para mi amochito.</p>
+    <p>By: Leito</p>
+
+    <p>Siempre tu. ♡</p>
+
+    <p style="margin-top:20px;">
+        Te amo muchisimo. 💗
+    </p>
+
+</footer>
+
+<script>
+
+// ABRIR LA PÁGINA
+
+function abrirPagina() {
+    document.getElementById("inicio").classList.add("oculto");
+    crearCorazones();
+}
+
+// ABRIR CARTAS
+
+function abrirCarta(id) {
+    const carta = document.getElementById(id);
+
+    carta.classList.toggle("mostrar");
+
+    if (carta.classList.contains("mostrar")) {
+        crearCorazones();
+    }
+}
+
+// MENSAJES ALEATORIOS
+
+const mensajes = [
+    "Eres mi casualidad más bonita. 💗",
+    "Qué bonito es tenerte en mi vida. 🌷",
+    "Te quiero muchísimo, Amorshito. 🥺",
+    "Tu sonrisa es de mis cosas favoritas. ❤️",
+    "Te mando mil besitos. 😚",
+    "Nunca olvides lo especial que eres para mí. 💕",
+    "Mi lugar favorito siempre sera contigo. 🫶",
+    "Eres mi personita favorita del universo. 💖",
+    "Quisiera abrazarte ahora mismo. 🥹" ,
+    "Te amo muchisisimo mi amorshito. "
+    
+];
+
+function mostrarMensaje() {
+
+    const numero = Math.floor(Math.random() * mensajes.length);
+
+    document.getElementById("mensaje").textContent =
+        mensajes[numero];
+
+    crearCorazones();
+}
+
+// ANIMACIÓN DE CORAZONES
+
+function crearCorazones() {
+
+    for (let i = 0; i < 8; i++) {
+
+        const corazon = document.createElement("div");
+
+        corazon.className = "corazon";
+
+        const emojis = ["💗", "💕", "💖", "🌸", "❤️"];
+
+        corazon.textContent =
+            emojis[Math.floor(Math.random() * emojis.length)];
+
+        corazon.style.left = Math.random() * 100 + "vw";
+
+        corazon.style.fontSize =
+            (20 + Math.random() * 20) + "px";
+
+        corazon.style.animationDuration =
+            (3 + Math.random() * 3) + "s";
+
+        document.body.appendChild(corazon);
+
+        setTimeout(() => {
+            corazon.remove();
+        }, 6500);
+    }
+}
+
+</script>
+
+</body>
+</html>
